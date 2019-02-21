@@ -1,9 +1,21 @@
-<h1>Pets</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Pets Database</h1>
+    <p class="lead">Filters: <%= @breed %> <%= @species %></p>
+  </div>
+</div>
 
-Filters: <%= @breed %> <%= @species %>
-
+<div class="card-columns">
 <% @pets.each do |pet| %>
-	<h4><%= pet.name %></h4>
-	<img style="width: 300px" src="<%= pet.image %>">
-	<p>Bio: <%= pet.description %></p>
+	<div class="col-4">
+		<div class="card" style="width: 22rem;">
+		  <img src="<%= pet.image %>" class="card-img-top" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"><%= pet.name %></h5>
+		    <p class="card-text"><%= pet.description %></p>
+		    <a href="#" class="btn btn-secondary">More Info</a>
+		  </div>
+		</div>
+	</div>
 <% end %>
+</div>
