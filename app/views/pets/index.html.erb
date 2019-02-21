@@ -1,0 +1,9 @@
+<h1>Pets</h1>
+
+Filters: <%= @breed %> <%= @species %>
+
+<% @pets.each do |pet| %>
+	<h4><%= pet.name %></h4>
+	<img style="width: 300px" src="<%= pet.image %>">
+	<p>Bio: <%= pet.description %></p>
+<% end %>
